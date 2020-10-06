@@ -71,4 +71,18 @@ public class Server {
             System.out.printf("%s left the server", name);
         }
     }
+
+    /** Returns a Set of all of the usernames.
+     *  @returns userNames*/
+    Set<String> getUserNames() {
+        return this.userNames;
+    }
+
+    /** Returns whether the server is active or not
+     *  (aka whether there are users in it or not).
+     *  @returns true if the list is not empty; else false
+     */
+    boolean active() {
+        return !this.users.isEmpty();
+    }
 }
