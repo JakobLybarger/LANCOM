@@ -5,9 +5,9 @@ import java.util.*;
 /** This class is the Server. When a client gets connected,
  *  an instance of user is created to serve the client.*/
 public class Server {
-    int port; // Server port number
-    Set<String> userNames; // Set of the names of users on the server
-    Set<User> users; // Set of the users on the server.
+    private int port; // Server port number
+    private Set<String> userNames; // Set of the names of users on the server
+    private Set<User> users; // Set of the users on the server.
 
     /** Server constructor.
      *  @param port - The port number(int)
