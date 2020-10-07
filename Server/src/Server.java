@@ -19,7 +19,7 @@ public class Server {
     /** Creates server socket and adds new sockets for every
      *  user that joins the server.
      */
-    void execute() {
+    public void execute() {
         try(ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.printf("Listening on port: %s%n", port);
 
@@ -46,7 +46,7 @@ public class Server {
      *  @param message - The message being sent
      *  @param user - The User who sent the message
      */
-    void displayMessage(String message, User user) {
+    public void displayMessage(String message, User user) {
         for(User u : users) {
             if (u != user) {
                 user.sendMessage(message);
@@ -55,7 +55,7 @@ public class Server {
     }
 
     /** Adds username of connected user to userNames. */
-    void addName(String name) {
+    public void addName(String name) {
         userNames.add(name);
     }
 
@@ -64,7 +64,7 @@ public class Server {
      *  @param name - The users username
      *  @param user - The User who disconnected.
      */
-    void removeUser(String name, User user) {
+    public void removeUser(String name, User user) {
         boolean removed = userNames.remove(name);
         if(removed) {
             users.remove(user);
@@ -74,7 +74,7 @@ public class Server {
 
     /** Returns a Set of all of the usernames.
      *  @return userNames*/
-    Set<String> getUserNames() {
+    public Set<String> getUserNames() {
         return this.userNames;
     }
 
@@ -82,7 +82,7 @@ public class Server {
      *  (aka whether there are users in it or not).
      *  @return true if the list is not empty; else false
      */
-    boolean active() {
+    public boolean active() {
         return !this.users.isEmpty();
     }
 }

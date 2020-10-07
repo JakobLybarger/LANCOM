@@ -1,6 +1,5 @@
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 public class User extends Thread {
     private Socket socket;
@@ -54,7 +53,7 @@ public class User extends Thread {
     }
 
     /** Prints all of the users on the server. */
-    void printUsers() {
+    private void printUsers() {
         if(server.active()) {
             writer.println("Users Online: " + server.getUserNames());
         }
@@ -66,7 +65,7 @@ public class User extends Thread {
     /** Prints the message on users screen sent by another user.
      *  @param message - The message sent by another user
      */
-    void sendMessage(String message) {
+    public void sendMessage(String message) {
         writer.println(message);
     }
 }
