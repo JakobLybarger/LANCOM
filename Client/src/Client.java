@@ -43,4 +43,9 @@ public class Client {
     public void setName(String name) {
         this.name = name;
     }
+
+    /** Get the users name. */
+    public String getName() {
+        return name;
+    }
 }
