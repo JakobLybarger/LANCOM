@@ -20,6 +20,7 @@ public class User extends Thread {
      *  when a user has joined, and lets the user leaves/alerts upon
      *  leaving.
      */
+    @Override
     public void run() {
         try {
             // Setting out input and output streams

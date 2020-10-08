@@ -2,9 +2,9 @@ import java.io.*;
 import java.net.*;
 
 public class Client {
-    int port;
-    String host;
-    String name;
+    private int port;
+    private String host;
+    private String name;
 
     /** Client constructor.
      *  @param host - The server host name

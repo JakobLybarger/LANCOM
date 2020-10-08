@@ -6,8 +6,8 @@ import java.util.*;
  *  an instance of user is created to serve the client.*/
 public class Server {
     private int port; // Server port number
-    private Set<String> userNames; // Set of the names of users on the server
-    private Set<User> users; // Set of the users on the server.
+    private Set<String> userNames = new HashSet<>(); // Set of the names of users on the server
+    private Set<User> users = new HashSet<>(); // Set of the users on the server.
 
     /** Server constructor.
      *  @param port - The port number(int)
@@ -83,6 +83,6 @@ public class Server {
      *  @return true if the list is not empty; else false
      */
     public boolean active() {
-        return !this.users.isEmpty();
+        return !this.userNames.isEmpty();
     }
 }
