@@ -27,7 +27,7 @@ public class User extends Thread {
             InputStream in = socket.getInputStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
             OutputStream out = socket.getOutputStream();
-            writer = new PrintWriter(out);
+            writer = new PrintWriter(out, true);
 
             printUsers();
 
