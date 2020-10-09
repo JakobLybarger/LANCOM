@@ -6,21 +6,27 @@ import java.util.*;
  *  an instance of user is created to serve the client.*/
 public class Server {
     private int port; // Server port number
+    private int backlog;
+    private String ip;
     private Set<String> userNames = new HashSet<>(); // Set of the names of users on the server
     private Set<User> users = new HashSet<>(); // Set of the users on the server.
 
     /** Server constructor.
      *  @param port - The port number(int)
+     * @param backlog - Number of pending connections the queue will hold
+     * @param ip - The local ip address
      */
-    public Server(int port) {
+    public Server(int port, int backlog, String ip) {
         this.port = port;
+        this.backlog = backlog;
+        this.ip = ip;
     }
 
     /** Creates server socket and adds new sockets for every
      *  user that joins the server.
      */
     public void execute() {
-        try(ServerSocket serverSocket = new ServerSocket(port)) {
+        try(ServerSocket serverSocket = new ServerSocket(port, backlog, InetAddress.getByName(ip))) {
             System.out.printf("Listening on port: %s%n", port);
 
             while(true) {
