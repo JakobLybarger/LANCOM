@@ -38,7 +38,7 @@ public class Read extends Thread {
 
                 // If client has name print out the name
                 if (client.getName() != null) {
-                    System.out.printf("(%s): \n", client.getName());
+                    System.out.printf("(%s): ", client.getName());
                 }
             }
             catch (IOException e) {
