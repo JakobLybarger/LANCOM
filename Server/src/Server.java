@@ -49,7 +49,7 @@ public class Server {
     public void displayMessage(String message, User user) {
         for(User u : users) {
             if (u != user) {
-                user.sendMessage(message);
+                u.sendMessage(message);
             }
         }
     }

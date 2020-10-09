@@ -2,9 +2,9 @@ import java.io.*;
 import java.net.*;
 
 public class Write extends Thread {
-    PrintWriter writer;
-    Socket socket;
-    Client client;
+    private PrintWriter writer;
+    private Socket socket;
+    private Client client;
 
     /** Write constructor.
      *  @param socket - The socket created by the client class

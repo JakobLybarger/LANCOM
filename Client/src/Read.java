@@ -2,9 +2,9 @@ import java.io.*;
 import java.net.*;
 
 public class Read extends Thread {
-    BufferedReader reader;
-    Socket socket;
-    Client client;
+    private BufferedReader reader;
+    private Socket socket;
+    private Client client;
 
     /** Read constructor.
      *  @param socket - The socket created by the client class
