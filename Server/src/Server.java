@@ -74,7 +74,7 @@ public class Server {
         boolean removed = userNames.remove(name);
         if(removed) {
             users.remove(user);
-            System.out.printf("%s left the server", name);
+            System.out.printf("%s left the server%n", name);
         }
     }
 

@@ -35,11 +35,12 @@ public class User extends Thread {
             server.addName(name);
             server.displayMessage("New user: " + name, this);
 
+            String serverMessage;
             String clientMessage;
             do {
                 clientMessage = reader.readLine();
-                clientMessage = String.format("(%s): %s", name, clientMessage);
-                server.displayMessage(clientMessage, this);
+                serverMessage = String.format("(%s): %s", name, clientMessage);
+                server.displayMessage(serverMessage, this);
             } while (!clientMessage.equals("bye"));
 
             server.removeUser(name, this);
